@@ -16,4 +16,5 @@ Currently has
   * Candy Crush
   * WIZARD
  
-![Oscillate]()
+![Oscillate](<img width="2560" height="1440" alt="OSCILLATE" src="https://github.com/user-attachments/assets/964fb3c4-da4e-420b-857e-9294e70850cb" />)
+
