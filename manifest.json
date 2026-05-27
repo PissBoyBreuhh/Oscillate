@@ -1,0 +1,13 @@
+{
+	"id": "Oscillate",
+	"name": "Oscillate",
+	"display_name": "Oscillate",
+	"author": ["Breuhh"],
+	"description": "antman: quantum maniacal",
+	"prefix": "osc",
+	"main_file": "Oscillate.lua",
+	"priority": 0,
+	"badge_colour": "7DF9FF",
+	"version": "1.0",
+	"dependencies": ["Steamodded (>=1.0.0~ALPHA-1321c)"]
+}
