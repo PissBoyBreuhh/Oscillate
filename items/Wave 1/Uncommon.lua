@@ -517,7 +517,7 @@ SMODS.Joker {
     calculate = function(self,card,context)
         if context.before then
             card.ability.extra.played_hands = card.ability.extra.played_hands+1
-            return {message = card.ability.extra.played_hands .. "/2"}
+            return {message = card.ability.extra.played_hands .. "/3"}
         end
         if context.joker_main and card.ability.extra.played_hands >= 3 then
             card.ability.extra.played_hands = 0
