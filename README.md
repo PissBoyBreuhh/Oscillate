@@ -1,6 +1,8 @@
 # Oscillate
 A mod for Balatro where I just add whatever I/friends want
 
+<img width="2560" height="1440" alt="OSCILLATE" src="https://github.com/user-attachments/assets/964fb3c4-da4e-420b-857e-9294e70850cb" />
+
 Currently has
 * 88 Jokers:
   * Just a lot
@@ -15,6 +17,4 @@ Currently has
   * Blursed
   * Candy Crush
   * WIZARD
- 
-![Oscillate](<img width="2560" height="1440" alt="OSCILLATE" src="https://github.com/user-attachments/assets/964fb3c4-da4e-420b-857e-9294e70850cb" />)
 
