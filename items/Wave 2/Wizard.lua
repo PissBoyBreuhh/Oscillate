@@ -63,7 +63,7 @@ SMODS.Joker {
     atlas = "osc_w2wizard",
     pos = {x = 2,y = 0},
     soul_pos = {x = 3,y = 0},
-    cost = 10,
+    cost = 40,
     immutable = true,
     config = {
         extra = {
@@ -127,7 +127,7 @@ SMODS.Joker {
     atlas = "osc_w2wizard",
     pos = {x = 2,y = 1},
     soul_pos = {x = 3,y = 1},
-    cost = 10,
+    cost = 40,
     immutable = true,
 
     calc_dollar_bonus = function(self, card)
@@ -186,7 +186,7 @@ SMODS.Joker {
     atlas = "osc_w2wizard",
     pos = {x = 2,y = 2},
     soul_pos = {x = 3,y = 2},
-    cost = 10,
+    cost = 40,
     immutable = true,
     config = {
         extra = {
@@ -275,7 +275,7 @@ SMODS.Joker {
     atlas = "osc_w2wizard",
     pos = {x = 2,y = 3},
     soul_pos = {x = 3,y = 3},
-    cost = 10,
+    cost = 40,
     immutable = true,
     config = {
         extra = {
