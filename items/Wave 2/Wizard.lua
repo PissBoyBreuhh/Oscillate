@@ -69,16 +69,21 @@ SMODS.Joker {
         extra = {
             base = 0.75,
         },
+        immutable = {
+            max = 0.999
+        },
     },
 
     loc_vars = function(self,info_queue,card)
         return { 
+            if card.ability.extra.base > card.ability.immutable.max then card.ability.extra.base = card.ability.extra.max end
             vars = { card.ability.extra.base * 100 },
         }
     end,
 
     calculate = function(self,card,context)
         if context.setting_blind then
+            if card.ability.extra.base > card.ability.immutable.max then card.ability.extra.base = card.ability.extra.max end
             G.E_MANAGER:add_event(Event({
                 trigger = "immediate",
                 func = function() 
