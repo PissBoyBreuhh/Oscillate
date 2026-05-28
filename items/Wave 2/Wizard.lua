@@ -75,8 +75,8 @@ SMODS.Joker {
     },
 
     loc_vars = function(self,info_queue,card)
+        if card.ability.extra.base > card.ability.immutable.max then card.ability.extra.base = card.ability.extra.max end
         return { 
-            if card.ability.extra.base > card.ability.immutable.max then card.ability.extra.base = card.ability.extra.max end
             vars = { card.ability.extra.base * 100 },
         }
     end,
