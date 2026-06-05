@@ -9,5 +9,6 @@
 	"priority": 0,
 	"badge_colour": "7DF9FF",
 	"version": "1.0",
-	"dependencies": ["Steamodded (>=1.0.0~ALPHA-1321c)"]
+	"dependencies": ["Steamodded, >= the zeebee one or whatever"],
+	"icon_path": "modicon.png"
 }
