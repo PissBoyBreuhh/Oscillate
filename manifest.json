@@ -3,12 +3,12 @@
 	"name": "Oscillate",
 	"display_name": "Oscillate",
 	"author": ["Breuhh"],
-	"description": "antman: quantum maniacal",
+	"description": "A mod for Balatro made by Breuhh. Where I add essentially whatever I want",
 	"prefix": "osc",
 	"main_file": "Oscillate.lua",
 	"priority": 0,
 	"badge_colour": "7DF9FF",
-	"version": "1.0",
+	"version": "1.0.2",
 	"dependencies": ["Steamodded (>=1.0.0~BETA-1531zeebee)"],
 	"icon_path": "modicon.png"
 }
