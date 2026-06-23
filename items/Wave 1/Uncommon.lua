@@ -1,4 +1,5 @@
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "osc_traffic1",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -36,7 +37,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "osc_rps1",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -88,7 +90,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "testest",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -141,7 +144,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "bees",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -165,7 +169,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "more_bees",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -189,7 +194,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "even_more_bees",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -213,7 +219,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "heat_death",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -256,7 +263,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "epicenter",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -290,7 +298,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "azazel_plush",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -317,7 +326,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "aussie_lamb",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -348,7 +358,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "canadian_rhino",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -379,7 +390,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "korean_salmon",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -410,7 +422,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "british_cow",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -441,7 +454,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "amazon_package",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -496,7 +510,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "oblobbles",
     rarity = 2,
     atlas = "osc_w1common", -- got buffed from common, thats why its atlas is w1common

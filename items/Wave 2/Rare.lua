@@ -1,4 +1,5 @@
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "osc_8_bees",
     rarity = 3,
     atlas = "osc_w2bees",
@@ -22,7 +23,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "osc_omg_so_many_bees",
     rarity = 3,
     atlas = "osc_w2bees",

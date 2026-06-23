@@ -1,4 +1,5 @@
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "jellybean",
     rarity = "osc_candy",
     atlas = "osc_w1candy",
@@ -27,7 +28,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "lozenge",
     rarity = "osc_candy",
     atlas = "osc_w1candy",
@@ -72,7 +74,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "lemondrop",
     rarity = "osc_candy",
     atlas = "osc_w1candy",
@@ -102,7 +105,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "gumsquare",
     rarity = "osc_candy",
     atlas = "osc_w1candy",
@@ -129,7 +133,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "lollipophead",
     rarity = "osc_candy",
     atlas = "osc_w1candy",
@@ -155,7 +160,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "jujubecluster",
     rarity = "osc_candy",
     atlas = "osc_w1candy",
@@ -193,7 +199,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "striped",
     rarity = "osc_candy",
     atlas = "osc_w1candy",
@@ -225,7 +232,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "wrapped",
     rarity = "osc_candy",
     atlas = "osc_w1candy",
@@ -265,7 +273,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "colorbomb",
     rarity = "osc_candy",
     atlas = "osc_w1candy",
@@ -291,7 +300,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "jellyfish",
     rarity = "osc_candy",
     atlas = "osc_w1candy",

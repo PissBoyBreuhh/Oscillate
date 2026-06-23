@@ -1,4 +1,5 @@
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "blursed_eye",
     rarity = 2,
     atlas = "osc_w2uncommon",
@@ -42,7 +43,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "tetranacci",
     rarity = 2,
     atlas = "osc_w2uncommon",

@@ -2,31 +2,17 @@ SMODS.Seal {
     key = "incubus",
     atlas = "osc_w1enhancers",
     pos = {x=2,y=0},
-    config = { extra = { chance = 3 } },
+    config = { extra = { portion = 4, chips = 1 } },
     badge_colour = HEX("921A42"),
 
     loc_vars = function(self, info_queue, card)
-        local numerator, denominator = SMODS.get_probability_vars(self, 1, self.config.extra.chance, 'incubus')
-        return { vars = { numerator, denominator } }
+        return { vars = { self.config.extra.portion, self.config.extra.chips } }
     end,
 
     calculate = function(self, card, context)
-        if context.repetition and SMODS.pseudorandom_probability(self, 'incubus', 1, self.config.extra.chance) then
-            local othercard = card
-            G.E_MANAGER:add_event(Event({
-                trigger = "after",
-                func = function()
-                    G.playing_card = (G.playing_card and G.playing_card + 1) or 1
-                    local _card = copy_card(othercard)
-                    _card:set_ability("m_osc_ghost")
-                    _card:add_to_deck()
-                    G.deck.config.card_limit = G.deck.config.card_limit + 1
-                    G.deck:emplace(_card)
-                    table.insert(G.playing_cards,_card)
-                    card:juice_up(0.5,0.5)
-                    return true
-                end
-            }))
+        if context.main_scoring and context.cardarea == G.play then
+            card.ability.perma_bonus = (card.ability.perma_bonus or 0) + self.config.extra.chips
+            return {mult = card:get_chip_bonus()/self.config.extra.portion}
         end
     end,
 }
@@ -82,6 +68,8 @@ SMODS.Enhancement {
         }
     },
 
+
+
     loc_vars = function(self, info_queue, card)
         return {vars = {card.ability.extra.mult}}
     end,
@@ -107,6 +95,8 @@ SMODS.Enhancement {
             gain = 0.05
         },
     },
+
+
 
     loc_vars = function(self, info_queue, card)
         return {vars = {card.ability.extra.xchips,card.ability.extra.gain}}
@@ -155,6 +145,8 @@ SMODS.Consumable {
     set = "Spectral",
     atlas = "osc_w1consumables",
     pos = {x=0,y=0},
+
+
 
     loc_vars = function(self, info_queue, card)
         return {vars = { colours = {HEX("3D1F38")}}}

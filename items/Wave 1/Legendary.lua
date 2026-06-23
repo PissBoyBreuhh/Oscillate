@@ -1,4 +1,5 @@
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "quantum",
     rarity = 4,
     atlas = "osc_w1legend",
@@ -27,7 +28,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "turkiet",
     rarity = 4,
     atlas = "osc_w1legend",
@@ -66,7 +68,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "moneycorp",
     rarity = 4,
     atlas = "osc_w1legend",
@@ -95,7 +98,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "dadproud",
     rarity = 4,
     atlas = "osc_w1legend",

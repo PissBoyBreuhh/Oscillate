@@ -1,4 +1,5 @@
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "metal_sonic",
     rarity = 2,
     atlas = "osc_w2plush",
@@ -40,7 +41,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "kurzgesagt_duck",
     rarity = 1,
     atlas = "osc_w2plush",
@@ -70,7 +72,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "long_kurzgesagt_duck",
     rarity = 2,
     atlas = "osc_w2plush",
@@ -100,7 +103,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "20_hornet",
     rarity = 2,
     atlas = "osc_w2plush",

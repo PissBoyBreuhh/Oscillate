@@ -1,4 +1,5 @@
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "freaky",
     rarity = 1,
     atlas = "osc_w2common",
@@ -25,7 +26,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "ghost_hunter",
     rarity = 1,
     atlas = "osc_w2common",
@@ -59,7 +61,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "wet_joker",
     rarity = 1,
     atlas = "osc_w2common",

@@ -12,7 +12,8 @@ SMODS.Sound {
     }
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "orb_great",
     rarity = 3,
     atlas = "osc_w2wizard",
@@ -57,7 +58,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "great_wizard",
     rarity = "osc_wizard",
     atlas = "osc_w2wizard",
@@ -96,7 +98,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "orb_nunchucks",
     rarity = 3,
     atlas = "osc_w2wizard",
@@ -126,7 +129,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "nunchucks_wizard",
     rarity = "osc_wizard",
     atlas = "osc_w2wizard",
@@ -140,7 +144,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "orb_gun",
     rarity = 3,
     atlas = "osc_w2wizard",
@@ -185,7 +190,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "gun_wizard",
     rarity = "osc_wizard",
     atlas = "osc_w2wizard",
@@ -219,7 +225,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "orb_p",
     rarity = 3,
     atlas = "osc_w2wizard",
@@ -274,7 +281,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "p_wizard",
     rarity = "osc_wizard",
     atlas = "osc_w2wizard",

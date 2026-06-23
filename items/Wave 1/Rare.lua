@@ -1,4 +1,5 @@
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "osc_weakness",
     rarity = 3,
     atlas = "osc_w1rare",
@@ -25,7 +26,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "lilith",
     rarity = 3,
     atlas = "osc_w1rare",
@@ -36,26 +38,29 @@ SMODS.Joker {
     cost = 8,
 
     loc_vars = function(self,info_queue,card)
-        info_queue[#info_queue+1] = G.P_CENTERS.osc_incubus_seal
+        info_queue[#info_queue+1] = G.P_SEALS.osc_incubus
     end,
 
     calculate = function(self,card,context)
-        if context.individual and context.cardarea == G.play and not context.blueprint then
-            local othercard = context.other_card
-            othercard:set_seal("osc_incubus")
-			G.E_MANAGER:add_event(Event {
-                trigger = "immediate",
-                func = function()
-                    othercard:juice_up(0.5,0.5)
-                    card:juice_up(0.5,0.5)
-                    return true
+        if context.before and not context.blueprint then
+            for i,v in ipairs(context.full_hand) do
+                if v:get_seal() ~= "osc_incubus" then
+                v:set_seal("osc_incubus")
+			    G.E_MANAGER:add_event(Event {
+                    trigger = "immediate",
+                    func = function()
+                        v:juice_up(0.5,0.5)       
+                        return true
+                    end
+                })
                 end
-            })
+            end
         end
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "plague",
     rarity = 3,
     atlas = "osc_w1rare",
@@ -96,7 +101,8 @@ SMODS.Joker {
 	end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "damocles",
     rarity = 3,
     atlas = "osc_w1rare",
@@ -134,7 +140,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "congregation",
     rarity = 3,
     atlas = "osc_w1rare",
@@ -167,7 +174,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "candycrush",
     rarity = 3,
     atlas = "osc_w1rare",

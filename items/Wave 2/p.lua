@@ -1,5 +1,5 @@
-Oscillate.is_p = function(card)
-    if card.config.center.is_p then
+Oscillate.is_p_joker = function(card)
+    if card.config.center.is_p_joker then
         return true
     end
     for i,v in ipairs(G.jokers.cards) do
@@ -16,11 +16,20 @@ Oscillate.true_p = {
     "j_osc_ppp",
     "j_osc_pppp",
     "j_osc_pea",
-    "j_osc_pee"
+    "j_osc_pee",
+    "j_osc_q",
+    "j_osc_d",
+    "j_osc_b",
+    "j_osc_prix",
+    "j_osc_plea",
+    "j_osc_pree",
+    "j_osc_payee"
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "p",
+    is_p_joker = true,
     is_p = true,
     rarity = 1,
     atlas = "osc_w2p",
@@ -34,6 +43,7 @@ SMODS.Joker {
 
  	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
+        badges[#badges+1] = Oscillate.get_badge(2)
  	end,
 
     loc_vars = function(self,info_queue,card)
@@ -51,9 +61,10 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "pp",
-    is_p = true,
+    is_p_joker = true,
     rarity = 2,
     atlas = "osc_w2p",
     pos = {x=1,y=0},
@@ -67,13 +78,14 @@ SMODS.Joker {
 
  	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
+        badges[#badges+1] = Oscillate.get_badge(2)
  	end,
 
     loc_vars = function(self,info_queue,card)
         card.ability.extra.xmult = 1
         if G.jokers then
         for i,v in ipairs(G.jokers.cards) do
-            if Oscillate.is_p(v) then
+            if Oscillate.is_p_joker(v) then
                 card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.gain
             end
         end
@@ -87,7 +99,7 @@ SMODS.Joker {
         if context.joker_main then
             card.ability.extra.xmult = 1
             for i,v in ipairs(G.jokers.cards) do
-                if Oscillate.is_p(v) then
+                if Oscillate.is_p_joker(v) then
                     card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.gain
                 end
             end
@@ -98,9 +110,10 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "ppp",
-    is_p = true,
+    is_p_joker = true,
     rarity = 3,
     atlas = "osc_w2p",
     pos = {x=2,y=0},
@@ -114,8 +127,9 @@ SMODS.Joker {
         }
     },
 
-    set_badges = function(self, card, badges)
+ 	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
+        badges[#badges+1] = Oscillate.get_badge(2)
  	end,
 
     loc_vars = function(self,info_queue,card)
@@ -125,28 +139,31 @@ SMODS.Joker {
     end,
 
     calculate = function(self,card,context)
-        if context.retrigger_joker_check and Oscillate.is_p(context.other_card) then
+        if context.retrigger_joker_check and Oscillate.is_p_joker(context.other_card) then
             return { repetitions = math.min(card.ability.extra.retriggers,card.ability.immutable.max) }
         end
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "pea",
-    is_p = true,
+    is_p_joker = true,
     rarity = 2,
     atlas = "osc_w2p",
     pos = {x=0,y=1},
     cost = 6,
 
-    set_badges = function(self, card, badges)
+ 	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
+        badges[#badges+1] = Oscillate.get_badge(2)
  	end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "pppp",
-    is_p = true,
+    is_p_joker = true,
     rarity = 4,
     atlas = "osc_w2p",
     soul_pos = {x=3,y=1},
@@ -159,15 +176,16 @@ SMODS.Joker {
         },
     },
 
-    set_badges = function(self, card, badges)
+ 	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
+        badges[#badges+1] = Oscillate.get_badge(2)
  	end,
 
     loc_vars = function(self,info_queue,card)
         card.ability.extra.xmult = 1
         if G.jokers then
         for i,v in ipairs(G.jokers.cards) do
-            if Oscillate.is_p(v) then
+            if Oscillate.is_p_joker(v) then
                 card.ability.extra.xmult = card.ability.extra.xmult * card.ability.extra.gain
             end
         end
@@ -181,7 +199,7 @@ SMODS.Joker {
         if context.joker_main then
             card.ability.extra.xmult = 1
             for i,v in ipairs(G.jokers.cards) do
-                if Oscillate.is_p(v) then
+                if Oscillate.is_p_joker(v) then
                     card.ability.extra.xmult = card.ability.extra.xmult * card.ability.extra.gain
                 end
             end
@@ -191,7 +209,7 @@ SMODS.Joker {
         end
 
         if context.card_added then
-            if Oscillate.is_p(context.card) and Oscillate.hitchance("pppp",1,2) and context.card.ability.set == "Joker" then
+            if Oscillate.is_p_joker(context.card) and Oscillate.hitchance("pppp",1,2) and context.card.ability.set == "Joker" then
                 local othercard = context.card
                 G.E_MANAGER:add_event(Event({
                     func = function()
@@ -204,9 +222,10 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "pee",
-    is_p = true,
+    is_p_joker = true,
     rarity = 3,
     atlas = "osc_w2p",
     pos = {x=1,y=1},
@@ -220,10 +239,10 @@ SMODS.Joker {
         }
     },
 
-    set_badges = function(self, card, badges)
+ 	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
+        badges[#badges+1] = Oscillate.get_badge(2)
  	end,
-
     loc_vars = function(self,info_queue,card)
         info_queue[#info_queue+1] = G.P_CENTERS.j_osc_p
         return { 

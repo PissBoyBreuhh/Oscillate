@@ -17,6 +17,8 @@ SMODS.Consumable {
     pos = {x = 0, y = 0},
     cost = 5,
 
+
+
     can_use = function(self,card)
         return G.GAME.blind.in_blind
     end,
@@ -51,6 +53,8 @@ SMODS.Consumable {
     pos = {x = 1, y = 0},
     cost = 5,
 
+
+
     can_use = function(self,card)
         return G.GAME.blind.in_blind
     end,
@@ -83,6 +87,8 @@ SMODS.Consumable {
         cards = 2
     },
 
+
+
     loc_vars = function(self,info_queue,card)
         return {vars = {card.ability.cards}}
     end,
@@ -110,6 +116,8 @@ SMODS.Consumable {
     pos = {x = 3, y = 0},
     cost = 5,
 
+
+
     loc_vars = function(self,info_queue,card)
         info_queue[#info_queue+1] = {set = "Other", key = "osc_true_p"}
     end,
@@ -136,6 +144,8 @@ SMODS.Consumable {
         debt = 55,
     },
 
+
+
     loc_vars = function(self,info_queue,card)
         return {vars = {card.ability.money, card.ability.debt} }
     end,
@@ -161,6 +171,8 @@ SMODS.Consumable {
     config = {
         cards = 3
     },
+
+
 
     loc_vars = function(self,info_queue,card)
         --info_queue
@@ -226,6 +238,8 @@ SMODS.Consumable {
             "p"
         }
     },
+
+
 
     can_use = function(self,card)
         if #G.jokers.cards < G.jokers.config.card_limit then 

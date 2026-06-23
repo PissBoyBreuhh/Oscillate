@@ -1,4 +1,5 @@
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "expired_milk",
     rarity = "osc_blursed",
     atlas = "osc_w2blursed",
@@ -24,7 +25,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "kakorrhapiaphobia",
     rarity = "osc_blursed",
     atlas = "osc_w2blursed",
@@ -54,7 +56,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "claustrophobia",
     rarity = "osc_blursed",
     atlas = "osc_w2blursed",
@@ -80,7 +83,8 @@ SMODS.Joker {
 	end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "dementia",
     rarity = "osc_blursed",
     atlas = "osc_w2blursed",
@@ -94,7 +98,8 @@ SMODS.Joker {
             mult = 3,
             dollars = 3,
             xchips = 2,
-            xmult = 1.5
+            xmult = 1.5,
+            actives = 0
         },
         active = {
             true,
@@ -128,12 +133,13 @@ SMODS.Joker {
             }
         end
 
-        if context.end_of_round and context.main_eval then
+        if context.end_of_round and context.main_eval and card.ability.extra.actives < 5 then
             local selector = math.floor(pseudorandom("forgor") * 5) % 5 + 1
             while not card.ability.active[selector] do
                 selector = math.floor(pseudorandom("forgor") * 5) % 5 + 1
             end
 
+            card.ability.extra.actives = card.ability.extra.actives + 1
             card.ability.active[selector] = false
             return {
                 message = "I forgot :skull:"
@@ -142,7 +148,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "a_timer",
     rarity = "osc_blursed",
     atlas = "osc_w2blursed",
@@ -240,7 +247,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "schizophrenia",
     rarity = "osc_blursed",
     atlas = "osc_w2blursed",
@@ -276,7 +284,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "scumming",
     rarity = "osc_blursed",
     atlas = "osc_w2blursed",
@@ -292,7 +301,8 @@ SMODS.Joker {
 	end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 2,
     key = "deep_fry",
     rarity = "osc_blursed",
     atlas = "osc_w2blursed",

@@ -1,4 +1,5 @@
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "workdays",
     rarity = 1,
     atlas = "osc_w1common",
@@ -25,7 +26,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "pigeon",
     rarity = 1,
     atlas = "osc_w1common",
@@ -69,7 +71,8 @@ SMODS.Joker {
     end,
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "new_world",
     rarity = 1,
     atlas = "osc_w1common",
@@ -100,7 +103,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "silksong",
     rarity = 1,
     atlas = "osc_w1common",
@@ -129,7 +133,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "prime",
     rarity = 1,
     atlas = "osc_w1common",
@@ -158,7 +163,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "rekoj",
     rarity = 1,
     atlas = "osc_w1common",
@@ -195,7 +201,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "longname",
     rarity = 1,
     atlas = "osc_w1common",
@@ -212,7 +219,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "cool_joker",
     rarity = 1,
     atlas = "osc_w1common",
@@ -248,7 +256,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "jokahh",
     rarity = 1,
     atlas = "osc_w1common",
@@ -271,7 +280,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "french",
     rarity = 1,
     atlas = "osc_w1common",
@@ -308,7 +318,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "trimmed",
     rarity = 1,
     atlas = "osc_w1common",
@@ -338,7 +349,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "git_gud",
     rarity = 1,
     atlas = "osc_w1common",
@@ -362,7 +374,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "pristineblade",
     rarity = 1,
     atlas = "osc_w1common",
@@ -393,7 +406,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "child",
     rarity = 1,
     atlas = "osc_w1common",
@@ -441,7 +455,8 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+Oscillate.Joker {
+    oscillate_wave = 1,
     key = "tribonacci",
     rarity = 1,
     atlas = "osc_w1common",
