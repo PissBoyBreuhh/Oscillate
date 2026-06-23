@@ -120,8 +120,8 @@ return {
             j_osc_lilith = {
                 name = "Low Quality Lilith Plush",
                 text = {
-                    "Every {C:attention}played{} and {C:attention}scored{} card gains",
-                    "the {C:red,T:osc_incubus}Incubus seal{} before scoring",
+                    "Before {C:attention}Scoring{}, applies {C:red,E:1}Incubus Seal",
+                    "to every {C:attention}played Card "
                 }
             },
 
@@ -459,6 +459,14 @@ return {
                 }
             },
 
+            j_osc_coloring = {
+                name = "Coloring Candy",
+                text = {
+                    "Sets the suit of {C:attention}all{} played {C:attention}Cards",
+                    "to the same as the {C:attention}leftmost{} played {C:attention}Card"
+                }
+            },
+
             j_osc_jellyfish = {
                 name = "Jelly Fish",
                 text = {
@@ -625,6 +633,73 @@ return {
                 text = {
                     "Creates {C:attention}#1# {C:dark_edition}Negative {C:attention}p#2#{} at",
                     "the {C:attention}end of round",
+                }
+            },
+
+            j_osc_q = {
+                name = "{s:0.5}q",
+                text = {
+                    "{C:mult}+#1#{} Mult for every {s:0.5,C:attention}p",
+                    "Counts as a {s:0.5,C:attention}p"
+                }
+            },
+
+            j_osc_d = {
+                name = "{s:0.5}d",
+                text = {
+                    "Every {s:0.5,C:attention}p{} gives {C:chips}+#1#{} Chips",
+                    "Counts as a {s:0.5,C:attention}p"
+                }
+            },
+
+            j_osc_b = {
+                name = "{s:0.5}b",
+                text = {
+                    "Every {s:0.5,C:attention}p{} gives {X:mult,C:white}X#1#{} Mult",
+                    "Counts as a {s:0.5,C:attention}p"
+                }
+            },
+
+            j_osc_pree = {
+                name = "{s:0.5}pree",
+                text = {
+                    "Every p {C:attention}Joker",
+                    "counts as a {s:0.5,C:attention}p"
+                }
+            },
+
+            j_osc_payee = {
+                name = "{s:0.5}payee",
+                text = {
+                    {
+                    "{C:attention}Gains{} more effects based",
+                    "on the {C:attention}amount{} of {s:0.5,C:attention}p{} present:"
+                    },
+                    {
+                    "{C:attention}1:{} {C:mult}+#1#{} Mult",
+                    "{C:attention}2:{} {X:mult,C:white}X#2#{} Mult",
+                    "{C:attention}4:{} {C:mult}+#3#{} Mult per {s:0.5,C:attention}p",
+                    "{C:attention}5:{} {X:mult,C:white}+X#4#{} Mult per {s:0.5,C:attention}p",
+                    }
+                }
+            },
+
+            j_osc_prix = {
+                name = "{s:0.5}prix",
+                text = {
+                    "When a p {C:attention}Joker{} is triggered",
+                    "Give {C:osc_crit}+#1#%{} Crit Chance {C:attention}permanently"
+                }
+            },
+
+            j_osc_plea = {
+                name = "{s:0.5}plea",
+                text = {
+                    "If at least {C:attention}5 Jokers",
+                    "are a p {C:attention}Joker",
+                    "{C:attention}Create #1# {C:edition}Negative",
+                    "true p {C:attention}Jokers{} and",
+                    "{E:2,C:red}self destruct"
                 }
             },
 
@@ -849,12 +924,272 @@ return {
                 }
             },
 
+            j_osc_123 = {
+                name = "One Two Three!",
+                text = {
+                    "{C:osc_crit}+#1#%{} Crit Chance when {C:attention}Triggered",
+                    "{C:attention}resets{} at the {C:attention}end of round"
+                }
+            },
+
+            j_osc_gambling_god = {
+                name = "Gambling God",
+                text = {
+                    "{C:osc_power}+#1#{} Crit Power"
+                }
+            },
+
+            j_osc_crit_joker = {
+                name = "Crit Joker",
+                text = {
+                    "{C:osc_crit}+#1#%{} Crit Chance",
+                }
+            },
+
+            j_osc_IShowGambling = {
+                name = "IShowGambling",
+                text = {
+                    "{C:osc_crit}+#1#%{} Crit Chance every scored card",
+                    "{C:attention}resets{} at the end of the {C:attention}ante"
+                }
+            },
+
+            j_osc_FourClover = {
+                name = "Four Clover",
+                text = {
+                    "{C:osc_crit}+#1#%{} Crit Chance"
+                }
+            },
+
+            j_osc_boomshakalaka = {
+                name = "Boom Shakalaka!",
+                text = {
+                    "{C:osc_power}+#1#{} Crit Power when {C:attention}Triggered",
+                    "{C:attention}resets{} at the end of the {C:attention}ante"
+                }
+            },
+
+            j_osc_capitalism = {
+                name = "Capitalism",
+                text = {
+                    "{C:inactive}What's your sell value",
+                    "{C:inactive}is {C:attention}my {C:inactive}sell value"
+                }
+            },
+
+            j_osc_scam = {
+                name = "Scam Artist",
+                text = {
+                    "Takes all your {C:attention}money",
+                    "and {E:2}invests{} it in",
+                    "{E:1,C:white,X:attention}JimboCoin{}. Gives it all",
+                    "back at the {C:attention}end of round",
+                    "{C:inactive}(Currently {C:money}$#1#{C:inactive})"
+                }
+            },
+
+            j_osc_blackhole = {
+                name = {"A Literal " .. (Osc_config.swears and "Fucking" or "Damn"), "Blackhole"},
+                text = {
+                    "Just sucks",
+                    "alllll {C:attention}playing",
+                    "{C:attention}cards{} in"
+                }
+            },
+
+            j_osc_communism = {
+                name = "Communism",
+                text = {
+                    "{C:inactive}What's my sell value",
+                    "{C:inactive}is {C:attention}our {C:inactive}sell value"
+                }
+            },
+
+            j_osc_jkr = {
+                name = "Jkr",
+                text = {
+                    "{C:chips}+#1#{} Chps fr vry {C:attention}rw",
+                    " n ll {C:attention}Jkrs'{} dscrptns"
+                }
+            },
+
+            j_osc_fdj = {
+                name = "{f:6}High Fidelity Joker",
+                text = {
+                    "{C:mult,f:6}+#1#{f:6} Mult"
+                }
+            },
+
+            j_osc_neon = {
+                name = "Neon Joker",
+                text = {
+                    {
+                    "Played and Scored", 
+                    "{C:attention}Cards{} give {X:chips,C:white}X#1#{} Chips"
+                    },
+                    {
+                    "{E:1}Neonizes{} the",
+                    "{C:attention}Screen"
+                    }
+                }
+            },
+
+            j_osc_badge = {
+                name = "Badge Joker",
+                text = {
+                    "{C:inactive}(Currently {C:chips}+#2# {C:inactive}Chips)",
+                    "{C:chips}+#1#{} Chips for every {C:attention}badge",
+                    "this {C:attention}Joker{} has",
+                    "{C:attention}Gains{} a new {C:attention}badge",
+                    "when {C:attention}Hovered over"
+                }
+            },
+
+            j_osc_jokerback = {
+                name = {"The Back Of", "The Joker"},
+                text = {
+                    "{E:1}Oscillates{} between {C:mult}#1#{} and {C:mult}+#2#{} Mult",
+                    "for every {C:attention}played{} and {C:attention}scored{} card"
+                }
+
+            },
+
+            j_osc_radiance = {
+                name = "The Radiance",
+                text = {
+                    " {C:mult}+#1#{} Mult for every",
+                    "{C:attention}played{} and {C:attention}scored{} card"
+                }
+            },
+
+            j_osc_ascended_grus = {
+                name = {"Ascended", "Grus Mother"},
+                text = {
+                    "{X:mult,C:white}X#3#{} Mult",
+                    "{E:1}Oscillates{} between {C:chips}+#1#{} Chips and",
+                    "{C:mult}+#2#{} Mult for every {C:attention}played",
+                    "and {C:attention}scored{} card",
+                }
+            },
+
+            j_osc_mexico = {
+                name = "Mexico",
+                text = {
+                    {
+                    "{X:mult,C:white}X#1#{} Mult, gains",
+                    "{X:mult,C:white}+X#2#{} Mult every",
+                    "{C:attention}Boss Blind"
+                    },
+                    {
+                    "{C:attention}Tints{} the",
+                    "screen {C:attention,E:1}Yellow"
+                    }
+                }
+            },
+
+            j_osc_relentless = {
+                name = {"Relentless Recurrence","Of Expressions"},
+                text = {
+                    "{C:green,E:1}#2# in 2{} chance to",
+                    "give {X:mult,C:white}X2{} mult {C:attention}repeatedly",
+                    "until {C:green,E:1}failing"
+                }
+            },
+
+            j_osc_red_plushie = {
+                name = "Red Seal Plushie",
+                text = {
+                    "{C:mult}+#1#{} Mult",
+                    "{C:attention}Retriggers{} itself",
+                    "if a {C:attention}Card{} with", 
+                    "a {C:red}Red Seal{} scored",
+                    "this {C:blue}Hand"
+                }
+            },
+
+            j_osc_skeletal = {
+                name = {"Skeletal Extremigans", "Plushies"},
+                text = {
+                    {
+                        "{C:attention}Played{} and {C:attention}Scored",
+                        "{C:attention}Cards{} with a {C:attention}Seal",
+                        "can give:"
+                    },
+                    {
+                        "{C:green,E:1}#1# in #2#{} chance for {C:mult}+#3#{} Mult",
+                        "{C:green,E:1}#1# in #4#{} chance for {C:mult}+#5#{} Mult",
+                        "{C:green,E:1}#1# in #6#{} chance for {C:mult}+#7#{} Mult",
+                        "{C:green,E:1}#1# in #8#{} chance for {C:mult}+#9#{} Mult"
+                    }
+                }
+            },
+
+            j_osc_blahaj = {
+                name = "Blahaj",
+                text = {
+                    "{C:attention}Applies{} either Blue,",
+                    "Pink or White {C:attention}Seal{} to",
+                    "{C:attention}Played{} and {C:attention}Unscoring Cards"
+                }
+            },
+
+            j_osc_dealer = {
+                name = "Dealer Plushie",
+                text = {
+                    "{C:green,E:1}#1# in #2#{} chance to",
+                    "{C:red}destroy{} cards in",
+                    "{C:attention}played hand{}. Then",
+                    "applies {E:1}Seal?{} to",
+                    "every card in {C:blue}hand"
+                    
+                }
+            },
+
+            j_osc_legend_joker = {
+                name = "Legendary Joker",
+                text = {
+                    "{C:mult}+#1#{} Mult",
+                }
+            },
+
+            j_osc_oscillate = {
+                name = "OSCILLATE",
+                text = {
+                    {
+                        "{E:1}Oscillates{} effects when a {C:attention}played{} and {C:attention}scored{} card {C:attention}scores",
+                        "{C:attention}Activates{} a new effect when a card is {C:attention}sold",
+                        "{C:attention}Upgrades{} its active effects at the {C:attention}end of round",
+                    },
+                    {
+                    "{C:mult}+#1#{} Mult, gains {C:mult}+#2#{} Mult {C:inactive}#3#",
+                    "{X:mult,C:white}X#4#{} Mult, gains {X:mult,C:white}+X#5#{} Mult {C:inactive}#6#",
+                    "{C:chips}+#7#{} Chips, gains {C:chips}+#8#{} Chips {C:inactive}#9#",
+                    "{X:chips,C:white}X#10#{} Chips, gains {X:chips,C:white}+X#11#{} Chips {C:inactive}#12#",
+                    "{C:money}$#13#{}, gains {C:money}+$#14# {C:inactive}#15#",
+                    "{C:attention}+#16#{} Joker Slots, gains {C:attention}+#17#{} Joker Slots {C:inactive}#18#",
+                    "{C:attention}+#19#{} Consumable Slots, gains {C:attention}+#20#{} Consumable Slots {C:inactive}#21#",
+                    },
+                    {
+                        "Fixed {C:green,E:1}1 in 2{} chance to {C:attention}Retrigger{} itself",
+                        "{C:inactive}(stacks up to the amount of active effects)"
+                    }
+                }
+            },
         },
+
         Edition = {
             e_osc_deep_fry = {
                 name = "Deep Fry",
                 text =  {
                     "{X:chips,C:white}X#1#{} Chips",
+                }
+            },
+
+            ["e_osc_edition?"] = {
+                name = "Edition?",
+                text =  {
+                    "Randomizes {C:attention}Edition",
+                    "upon Scoring"
                 }
             }
         },
@@ -896,6 +1231,14 @@ return {
                     "of the sum of {C:attention}adjacent",
                     "played cards' {C:chips}+Chips"
                 }
+            },
+
+            ["m_osc_enhancement?"] = {
+                name = "Enhanced Card?",
+                text = {
+                    "Randomizes {C:attention}Enhancement",
+                    "upon Scoring"
+                }
             }
         },
 
@@ -913,12 +1256,117 @@ return {
             osc_incubus_seal = {
                 name = "Incubus Seal",
                 text = {
-                    "{C:green,E:1}#1# in #2#{} chance to",
-                    "create a {C:attention}copy",
-                    "of {C:attention}itself{} with",
-                    "{E:2}Ghost{} applied"
+                    "Gives a {C:attention}#1#th{} of the",
+                    "{C:attention}Card's{C:chips} +Chips{} as",
+                    "{C:mult}+Mult{}. Gains {C:chips}+#2#{} Chips"
                 }
-            }
+            },
+
+            osc_pink_seal = {
+                name = "Pink Seal",
+                text = {
+                    "Creates a {V:1}Candy Crush {C:attention}Joker",
+                    "if played {C:attention}alone{} on the first {C:blue}Hand"
+                }
+            },
+
+            osc_white_seal = {
+                name = "White Seal",
+                text = {
+                    "{C:green,E:1}#1# in #2#{} Chance to",
+                    "{C:attention}Level up{} played {C:blue}Hand",
+                    "if {C:attention}Played{} and {C:attention}Unscoring"
+                }
+            },
+
+            ["osc_seal?_seal"] = {
+                name = "Seal?",
+                text = {
+                    "Randomizes {C:attention}Seal",
+                    "upon Scoring"
+                }
+            },
+
+            p_osc_normal_gamering={
+                name="Gamering Pack",
+                text={
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2# {C:gamering}Gamering{} cards to",
+                    "keep",
+                }, 
+            },
+
+            p_osc_jumbo_gamering={
+                name="Jumbo Gamering Pack",
+                text={
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2# {C:gamering}Gamering{} cards to",
+                    "keep",
+                },
+            },
+
+            p_osc_mega_gamering={
+                name="Mega Gamering Pack",
+                text={
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2# {C:gamering}Gamering{} cards to",
+                    "keep",
+                },
+            },
+
+            p_osc_normal_oscillate={
+                name="Oscillate Pack",
+                text={
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2# {E:1}Oscillate{} cards to",
+                    "keep",
+                },
+            },
+
+            p_osc_jumbo_oscillate={
+                name="Jumbo Oscillate Pack",
+                text={
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2# {E:1}Oscillate{} cards to",
+                    "keep",
+                },
+            },
+
+            p_osc_mega_oscillate={
+                name="Mega Oscillate Pack",
+                text={
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2# {E:1}Oscillate{} cards to",
+                    "keep",
+                },
+            },
+
+            p_osc_normal_blursed={
+                name="Blursed Pack",
+                text={
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2# {E:1}Blursed{} cards to",
+                    "keep",
+                },
+            },
+
+            p_osc_jumbo_blursed={
+                name="Jumbo Blursed Pack",
+                text={
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2# {E:1}Blursed{} cards to",
+                    "keep",
+                },
+            },
+
+            p_osc_mega_blursed={
+                name="Mega Blursed Pack",
+                text={
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2# {E:1}Blursed{} cards to",
+                    "keep",
+                },
+            },
         },
 
         Spectral = {
@@ -997,6 +1445,44 @@ return {
                     "{C:attention}Orb"
                 }
             },
+
+            c_osc_harharhar = {
+                name = {"har","har","har"},
+                text = {
+                    "{C:attention}Replaces{} every {C:attention}Joker",
+                    "with one of a {E:1}rarity",
+                    "higher, {E:1,C:green}1 in 3{} chance",
+                    "to instead replace",
+                    "with a {V:1,E:1}blursed {C:attention}Joker"
+                }
+            },
+
+            c_osc_pphehe = {
+                name = "pp hehe",
+                text = {
+                    "{C:attention}Every{} current {C:attention}Joker",
+                    "counts as a p {C:attention}Joker"
+                }
+            },
+
+            c_osc_wombo = {
+                name = "Wombo Combo",
+                text = {
+                    "{C:osc_crit}+10%{} Crit Chance",
+                    "{C:inactive,E:2}Yeah, that's it"
+                }
+            },
+
+            c_osc_whitehole= {
+                name = {"A Literal " .. (Osc_config.swears and "Fucking" or "Damn"), "Whitehole"},
+                text = {
+                    "Just creates",
+                    "alllll {C:attention}playing",
+                    "{C:attention}cards{} sucked in",
+                    "by A Literal " .. (Osc_config.swears and "Fucking" or "Damn") .. " Blackhole,",
+                    "But lost in {E:1}translation{}, a bit..."
+                }
+            },
         }
     },
 
@@ -1008,10 +1494,18 @@ return {
             k_gamering = "Gamering",
             b_gamering_cards = "Gamering Cards",
 
-            k_osc_p = "p Joker"
+            k_osc_p = "p Joker",
+
+            gamering = "Gamering Pack",
+            oscillate = "Oscillate Pack",
+            blursed = "Blursed Pack"
         },
         labels = {
             osc_incubus_seal = "Incubus Seal",
+            osc_pink_seal = "Pink Seal",
+            osc_white_seal = "White Seal",
+            ["osc_seal?_seal"] = "Seal?",
+            ["osc_edition?"] = "Edition?",
             osc_deep_fry = "Deep Fry"
         }
     }

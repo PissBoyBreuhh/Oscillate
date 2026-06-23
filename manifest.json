@@ -8,7 +8,7 @@
 	"main_file": "Oscillate.lua",
 	"priority": 0,
 	"badge_colour": "7DF9FF",
-	"version": "1.0.2",
+	"version": "1.0.0 W3",
 	"dependencies": ["Steamodded (>=1.0.0~BETA-1531zeebee)"],
 	"icon_path": "modicon.png"
 }
