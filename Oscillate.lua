@@ -313,7 +313,7 @@ SMODS.Joker:take_ownership('brainstorm',{
             }
         }
     end
-})
+}, true)
 
 SMODS.ScreenShader {
     key = "mexico",
