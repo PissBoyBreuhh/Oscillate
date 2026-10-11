@@ -2,8 +2,8 @@ Oscillate.Joker {
     oscillate_wave = 2,
     key = "expired_milk",
     rarity = "osc_blursed",
-    atlas = "osc_w2blursed",
-    pos = {x=0,y=0},
+    atlas = (Osc_config.gisen and "osc_w4gisenmode" or "osc_w2blursed"),
+    pos = (Osc_config.gisen and {x=1,y=0} or {x=0,y=0}),
     config = {
         extra = {
             chips = 30,
@@ -309,6 +309,10 @@ Oscillate.Joker {
     pos = {x=3,y=1},
     blueprint_compat = true,
     cost = 0,
+
+    loc_vars = function(self,info_queue,card)
+        info_queue[#info_queue+1] = G.P_CENTERS.e_osc_deep_fry
+    end,
 
     calculate = function(self,card,context)
         if context.individual and context.cardarea == G.play then

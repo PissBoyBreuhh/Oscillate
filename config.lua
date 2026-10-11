@@ -1,3 +1,5 @@
 return {
-    swears = true
+    swears = true,
+    gisen = false,
+    mod_badge_names = 4
 }

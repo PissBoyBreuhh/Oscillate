@@ -1,5 +1,8 @@
 Oscillate.Joker {
     oscillate_wave = 3,
+    oscillate_info = {
+        crit = true
+    },
     key = "123",
     rarity = 1,
     atlas = "osc_w3crit",
@@ -23,22 +26,26 @@ Oscillate.Joker {
     calculate = function(self,card,context)
         if context.joker_main then
             card.ability.immutable.added = card.ability.immutable.added + card.ability.extra.critchance
-		    Oscillate.mod_crit(card.ability.extra.critchance, "chance", "add", card)
+            return{osc_crit = card.ability.extra.critchance}
         end
 
         if context.end_of_round then
-            Oscillate.mod_crit(-card.ability.immutable.added, "chance", "add", card, "Reset!")
+            local temp = -card.ability.immutable.added
             card.ability.immutable.added = 0
+            return{osc_crit = temp, crit_message = localize("k_reset")}
         end
     end,
 
     remove_from_deck = function(self, card, from_debuff)
-        Oscillate.mod_crit(-card.ability.immutable.added, "chance", "add", card, nil, false)
+        return{osc_crit = -card.ability.immutable.added, crit_message = localize("k_reset")}
     end,
 }
 
 Oscillate.Joker {
     oscillate_wave = 3,
+    oscillate_info = {
+        crit = true
+    },
     key = "crit_joker",
     rarity = 2,
     atlas = "osc_w3crit",
@@ -57,16 +64,19 @@ Oscillate.Joker {
     end,
 
     add_to_deck = function(self, card, from_debuff)
-        Oscillate.mod_crit(card.ability.immutable.critchance, "chance", "add", card, nil, false)
+        return{osc_crit = card.ability.immutable.critchance}
     end,
 
     remove_from_deck = function(self, card, from_debuff)
-        Oscillate.mod_crit(-card.ability.immutable.critchance, "chance", "add", card, nil, false)
+        return{osc_crit = -card.ability.immutable.critchance}
     end,
 }
 
 Oscillate.Joker {
     oscillate_wave = 3,
+    oscillate_info = {
+        crit = true
+    },
     key = "gambling_god",
     rarity = 3,
     atlas = "osc_w3crit",
@@ -85,16 +95,19 @@ Oscillate.Joker {
     end,
 
     add_to_deck = function(self, card, from_debuff)
-        Oscillate.mod_crit(card.ability.immutable.critamount, "amount", "add", card, nil, false)
+        return{osc_power = card.ability.immutable.critamount}
     end,
 
     remove_from_deck = function(self, card, from_debuff)
-        Oscillate.mod_crit(-card.ability.immutable.critamount, "amount", "add", card, nil, false)
+        return{osc_power = -card.ability.immutable.critamount}
     end,
 }
 
 Oscillate.Joker {
     oscillate_wave = 3,
+    oscillate_info = {
+        crit = true
+    },
     key = "IShowGambling",
     rarity = 2,
     atlas = "osc_w3crit",
@@ -118,22 +131,26 @@ Oscillate.Joker {
     calculate = function(self,card,context)
         if context.individual and context.cardarea == G.play then
             card.ability.immutable.added = card.ability.immutable.added + card.ability.extra.critchance
-		    Oscillate.mod_crit(card.ability.extra.critchance, "chance", "add", card)
+		    return{osc_crit = card.ability.extra.critchance}
         end
 
         if context.ante_end then
-            Oscillate.mod_crit(-card.ability.immutable.added, "chance", "add", card, "Reset!")
+            local temp = -card.ability.immutable.added
             card.ability.immutable.added = 0
+            return{osc_crit = temp, crit_message = localize("k_reset")}
         end
     end,
 
     remove_from_deck = function(self, card, from_debuff)
-        Oscillate.mod_crit(-card.ability.immutable.added, "chance", "add", card, nil, false)
+        return{osc_crit = -card.ability.immutable.added}
     end,
 }
 
 Oscillate.Joker {
     oscillate_wave = 3,
+    oscillate_info = {
+        crit = true
+    },
     key = "FourClover",
     rarity = 4,
     atlas = "osc_w3crit",
@@ -153,16 +170,19 @@ Oscillate.Joker {
     end,
 
     add_to_deck = function(self, card, from_debuff)
-        Oscillate.mod_crit(card.ability.immutable.critchance, "chance", "add", card, nil, false)
+        return{osc_crit = card.ability.immutable.critchance}
     end,
 
     remove_from_deck = function(self, card, from_debuff)
-        Oscillate.mod_crit(-card.ability.immutable.critchance, "chance", "add", card, nil, false)
+        return{osc_crit = -card.ability.immutable.critchance}
     end,
 }
 
 Oscillate.Joker {
     oscillate_wave = 3,
+    oscillate_info = {
+        crit = true
+    },
     key = "boomshakalaka",
     rarity = 2,
     atlas = "osc_w3crit",
@@ -186,16 +206,17 @@ Oscillate.Joker {
     calculate = function(self,card,context)
         if context.joker_main then
             card.ability.immutable.added = card.ability.immutable.added + card.ability.extra.critamount
-		    Oscillate.mod_crit(card.ability.extra.critamount, "amount", "add", card)
+		    return{osc_power = card.ability.extra.critamount}
         end
 
         if context.ante_end then
-            Oscillate.mod_crit(-card.ability.immutable.added, "amount", "add", card, "Reset!")
+            local temp = -card.ability.immutable.added
             card.ability.immutable.added = 0
+            return{osc_power = temp, crit_message = localize("k_reset")}
         end
     end,
 
     remove_from_deck = function(self, card, from_debuff)
-        Oscillate.mod_crit(-card.ability.immutable.added, "amount", "add", card, nil, false)
+        return{osc_power = -card.ability.immutable.added}
     end,
 }

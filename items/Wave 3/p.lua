@@ -27,7 +27,7 @@ Oscillate.Joker {
 
  	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
-        badges[#badges+1] = Oscillate.get_badge(3)
+        
  	end,
 
     loc_vars = function(self,info_queue,card)
@@ -67,7 +67,7 @@ Oscillate.Joker {
 
  	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
-        badges[#badges+1] = Oscillate.get_badge(3)
+        
  	end,
 
     loc_vars = function(self,info_queue,card)
@@ -82,7 +82,6 @@ Oscillate.Joker {
             if Oscillate.is_p(context.other_joker) then
                 return {chips = card.ability.extra.chips, message_card = context.other_joker}
             end
-            
         end
     end,
 }
@@ -104,7 +103,7 @@ Oscillate.Joker {
 
  	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
-        badges[#badges+1] = Oscillate.get_badge(3)
+        
  	end,
 
     loc_vars = function(self,info_queue,card)
@@ -135,7 +134,7 @@ Oscillate.Joker {
 
  	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
-        badges[#badges+1] = Oscillate.get_badge(3)
+        
  	end,
 }
 
@@ -165,7 +164,7 @@ Oscillate.Joker {
 
  	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
-        badges[#badges+1] = Oscillate.get_badge(3)
+        
  	end,
 
     calculate = function(self,card,context)
@@ -194,6 +193,9 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 3,
+    oscillate_info = {
+        crit = true
+    },
     key = "prix",
     rarity = 2,
     atlas = "w3p",
@@ -209,7 +211,7 @@ Oscillate.Joker {
 
  	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
-        badges[#badges+1] = Oscillate.get_badge(3)
+        
  	end,
 
     loc_vars = function(self,info_queue,card)
@@ -221,7 +223,7 @@ Oscillate.Joker {
     calculate = function(self,card,context)
         if context.other_joker then
             if Oscillate.is_p_joker(context.other_joker) then
-                Oscillate.mod_crit(card.ability.extra.critchance, "chance", "add", card)
+                return { osc_crit = card.ability.extra.critchance }
             end   
         end
     end,
@@ -244,7 +246,7 @@ Oscillate.Joker {
 
  	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
-        badges[#badges+1] = Oscillate.get_badge(3)
+        
  	end,
 
     loc_vars = function(self,info_queue,card)

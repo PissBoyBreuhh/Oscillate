@@ -61,6 +61,9 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 1,
+    oscillate_info = {
+        credit = "Shiba"
+    },
     key = "plague",
     rarity = 3,
     atlas = "osc_w1rare",

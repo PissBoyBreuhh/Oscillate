@@ -105,6 +105,9 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 1,
+    oscillate_info = {
+        credit = "Shiba"
+    },
     key = "silksong",
     rarity = 1,
     atlas = "osc_w1common",
@@ -135,6 +138,9 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 1,
+    oscillate_info = {
+        credit = "Shiba"
+    },
     key = "prime",
     rarity = 1,
     atlas = "osc_w1common",
@@ -165,6 +171,9 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 1,
+    oscillate_info = {
+        credit = "Shiba"
+    },
     key = "rekoj",
     rarity = 1,
     atlas = "osc_w1common",
@@ -258,6 +267,9 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 1,
+    oscillate_info = {
+        credit = "Shiba"
+    },
     key = "jokahh",
     rarity = 1,
     atlas = "osc_w1common",
@@ -376,6 +388,9 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 1,
+    oscillate_info = {
+        credit = "Shiba"
+    },
     key = "pristineblade",
     rarity = 1,
     atlas = "osc_w1common",

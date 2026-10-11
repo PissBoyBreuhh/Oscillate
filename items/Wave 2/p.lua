@@ -23,7 +23,10 @@ Oscillate.true_p = {
     "j_osc_prix",
     "j_osc_plea",
     "j_osc_pree",
-    "j_osc_payee"
+    "j_osc_payee",
+    "j_osc_p_bee",
+    "j_osc_balloon_boy",
+    "j_osc_dd"
 }
 
 Oscillate.Joker {
@@ -43,7 +46,6 @@ Oscillate.Joker {
 
  	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
-        badges[#badges+1] = Oscillate.get_badge(2)
  	end,
 
     loc_vars = function(self,info_queue,card)
@@ -78,7 +80,6 @@ Oscillate.Joker {
 
  	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
-        badges[#badges+1] = Oscillate.get_badge(2)
  	end,
 
     loc_vars = function(self,info_queue,card)
@@ -129,7 +130,7 @@ Oscillate.Joker {
 
  	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
-        badges[#badges+1] = Oscillate.get_badge(2)
+        
  	end,
 
     loc_vars = function(self,info_queue,card)
@@ -156,7 +157,7 @@ Oscillate.Joker {
 
  	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
-        badges[#badges+1] = Oscillate.get_badge(2)
+        
  	end,
 }
 
@@ -178,7 +179,7 @@ Oscillate.Joker {
 
  	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
-        badges[#badges+1] = Oscillate.get_badge(2)
+        
  	end,
 
     loc_vars = function(self,info_queue,card)
@@ -241,7 +242,7 @@ Oscillate.Joker {
 
  	set_badges = function(self, card, badges)
  		badges[#badges+1] = create_badge(localize('k_osc_p'), G.C.FILTER, G.C.WHITE, 0.6 )
-        badges[#badges+1] = Oscillate.get_badge(2)
+        
  	end,
     loc_vars = function(self,info_queue,card)
         info_queue[#info_queue+1] = G.P_CENTERS.j_osc_p

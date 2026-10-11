@@ -13,8 +13,6 @@ vec4 effect( vec4 colour, Image texture, vec2 tc, vec2 screen_coords )
     return tex;
 }
 
-
-
 #ifdef VERTEX
 vec4 position( mat4 transform_projection, vec4 vertex_position )
 {

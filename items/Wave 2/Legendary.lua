@@ -1,5 +1,6 @@
 Oscillate.Joker {
     oscillate_wave = 2,
+    is_bee = true,
     key = "osc_more_bee_us",
     rarity = 4,
     atlas = "osc_w2bees",
@@ -19,13 +20,16 @@ Oscillate.Joker {
 
     calculate = function(self,card,context)
         if context.pre_discard or context.before or context.setting_blind or context.buying_card or context.reroll_shop or context.selling_card or (context.end_of_round and context.main_eval) or context.skip_blind or context.using_consumeable then
-            return{dollars=card.ability.extra.money}
+            return{dollars=card.ability.extra.money + Oscillate.CountBees()}
         end
     end,
 }
 
 Oscillate.Joker {
     oscillate_wave = 2,
+    oscillate_info = {
+        credit = "Anton"
+    },
     key = "osc_antons_guide",
     rarity = 4,
     atlas = "osc_w2legendary",

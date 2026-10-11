@@ -5,7 +5,7 @@ SMODS.Seal {
     pos = {x=1,y=1},
 
     calculate = function(self, card, context)
-        if context.main_scoring and context.cardarea == G.play then          
+        if context.main_scoring and (context.cardarea == G.play or (context.cardarea == G.hand and G.GAME.osc_seal_buffs.sealq)) then          
             card:set_seal(SMODS.poll_seal({type_key = "seal?", guaranteed = true}))
         end
     end,

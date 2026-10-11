@@ -43,37 +43,18 @@ local old_loc_colour = loc_colour
 function loc_colour(_c, _default)
   if _c == "osc_crit" then return G.C.OSC_CRIT end
   if _c == "osc_power" then return G.C.OSC_POWER end
+  if _c == "osc_song" then return G.C.OSC_SONG end
   return old_loc_colour(_c, _default)
 end
 
-Oscillate.mod_crit = function(mod, crit, type, card, message, hide_message)
-    if not crit then return end
-    if not type then type = "add" end
-
-    if crit == "chance" then
-        if type == "add" and mod ~= 0 then
-            G.GAME.osc_critchance = G.GAME.osc_critchance + mod/100
-            if not hide_message then card_eval_status_text(card, "extra", nil, nil, nil, {message = message or ((mod > 0 and "+" or "-") .. math.abs(mod) .. "%"), colour = G.C.OSC_CRIT}) end
-        elseif type == "mul" and mod ~= 1 then
-            G.GAME.osc_critchance = G.GAME.osc_critchance * mod
-            if not hide_message then card_eval_status_text(card, "extra", nil, nil, nil, {message = message or ("X" .. mod), colour = G.C.OSC_CRIT}) end
-        end
-    elseif crit == "amount" then
-        if type == "add" and mod ~= 0 then
-            G.GAME.osc_critamount = G.GAME.osc_critamount + mod
-            if not hide_message then card_eval_status_text(card, "extra", nil, nil, nil, {message = message or ((mod > 0 and "+" or "-") .. math.abs(mod)), colour = G.C.OSC_POWER}) end
-        elseif type == "mul" and mod ~= 1 then
-            G.GAME.osc_critamount = G.GAME.osc_critamount * mod
-            if not hide_message then card_eval_status_text(card, "extra", nil, nil, nil, {message = message or ("X" .. mod), colour = G.C.OSC_POWER}) end
-        end
-    end
+Oscillate.effects = {"osc_crit","osc_power"}
+for k, v in pairs(Oscillate.effects) do
+	table.insert(SMODS.scoring_parameter_keys or SMODS.calculation_keys, v)
 end
-
 
 local old_scie = SMODS.calculate_individual_effect
 function SMODS.calculate_individual_effect(effect, scored_card, key, amount, from_edition) 
     local is_scoring = false
-    local changed = false
 	for k in pairs(SMODS.Scoring_Parameters) do
 		if key:find(k) then
 			is_scoring = true
@@ -81,25 +62,49 @@ function SMODS.calculate_individual_effect(effect, scored_card, key, amount, fro
 		end
 	end
 
+    local ret = old_scie(effect, scored_card, key, amount, from_edition)
+    if ret then return ret end
+
+    if (key == "osc_crit") and amount ~= 0 then
+        if effect.card then juice_card(effect.card) end
+        G.GAME.osc_critchance = G.GAME.osc_critchance + amount/100
+
+        if not effect.remove_default_message then
+            card_eval_status_text(effect.message_card or effect.juice_card or scored_card or effect.card or effect.focus, "extra", nil, nil, nil, {message = effect.crit_message or ((amount > 0 and "+" or "-") .. math.abs(amount) .. "%"), colour = G.C.OSC_CRIT})
+        end
+    end
+
+    if (key == "osc_power") and amount ~= 0 then
+        if effect.card then juice_card(effect.card) end
+        G.GAME.osc_critamount = G.GAME.osc_critamount + amount
+
+        if not effect.remove_default_message then
+            card_eval_status_text(effect.message_card or effect.juice_card or scored_card or effect.card or effect.focus, "extra", nil, nil, nil, {message = effect.crit_message or ((amount > 0 and "+" or "-") .. math.abs(amount)), colour = G.C.OSC_POWER})
+        end
+    end
+
     if is_scoring and G.GAME.osc_critchance > pseudorandom("OscillateCrit") then -- crit taken from Eris' mod "Hypernova" and changed slightly for my usage
         amount = amount * G.GAME.osc_critamount
-		changed = true
 	end
 
-	if changed and key:sub(-4) == "_mod" then
-		key = key:sub(0,-5)
-		effect.message = nil
-	end
-
-    return old_scie(effect, scored_card, key, amount, from_edition)
+    return true
 end
 
 Oscillate.reset_game_globals = function(run_start)
     if run_start then
         G.GAME.osc_critchance, G.GAME.osc_critamount = 0, 2
         G.GAME.osc_whitehole = {}
+        G.GAME.osc_seal_buffs = {}
     end
 end
+
+Oscillate.versions = {
+    "Release!",
+    "P Galore!",
+    "Gambling!",
+    "Musical!",
+    "Inclusive!"
+}
 
 Oscillate.get_badge = function(wave)
     if wave == "omega" then return create_badge("OSCILLATION", Oscillate.badge_colour, G.C.WHITE, 2) end
@@ -107,17 +112,73 @@ Oscillate.get_badge = function(wave)
     local color = Oscillate.badge_colour
     if wave == 2 then color = HEX("45de3a") end
     if wave == 3 then color = HEX("ff9333") end
-    return create_badge("Oscillate W" .. wave, color, G.C.WHITE)    
-    
+    if wave == 4 then color = HEX("e683e2") end
+    if wave == 5 then color = HEX("888888") end
+
+    Osc_config.mod_badge_names = math.floor(Osc_config.mod_badge_names + 0.5)
+    return 
+        (Osc_config.mod_badge_names == 4 and create_badge("Oscillate Wave " .. wave .. ": " .. Oscillate.versions[wave], color, G.C.WHITE)) or 
+        (Osc_config.mod_badge_names == 3 and create_badge("Oscillate W" .. wave .. ": " .. Oscillate.versions[wave], color, G.C.WHITE)) or
+        (Osc_config.mod_badge_names == 2 and create_badge("Oscillate Wave " .. wave, color, G.C.WHITE)) or 
+        (create_badge("Oscillate W" .. wave, color, G.C.WHITE))
 end
 
 Oscillate.Joker = SMODS.Joker:extend {
     no_mod_badges = true,
     from_oscillate = true,
-    set_badges = function(self, card, badges)
-        badges[#badges+1] = Oscillate.get_badge(card.config.center.oscillate_wave)
-    end
+    inject = function(self)
+        SMODS.Joker.inject(self)
+        
+        local old_sb = self.set_badges or function() end
+        self.set_badges = function(_self, _card, badges)
+            old_sb(_self, _card, badges)
+ 		    badges[#badges+1] = Oscillate.get_badge(_card.config.center.oscillate_wave)
+ 	    end
+
+        local old_lv = self.loc_vars or function() end
+        self.loc_vars = function(_self, info_queue, _card)
+            local info
+            if _card.config then
+                info = _card.config.center.oscillate_info
+            end
+            if info then
+                if info.credit then
+                    info_queue[#info_queue+1] = {set = "Other", key = "osc_" .. info.credit:lower()}
+                end
+
+                if info.crit then
+ 		            info_queue[#info_queue+1] = {set = "Other", key = "osc_crit_info", vars = {math.floor((G.GAME.osc_critchance or 0)*1000)/10, math.floor((G.GAME.osc_critamount or 2)*100)/100}}
+                end
+            end
+
+            return old_lv(_self, info_queue, _card)
+ 	    end
+    end,
 }
+
+Oscillate.albums = {
+    unholyness = {pos = {x = 0, y = 0}, name = "Unholyness: The Collective"},
+    tapes = {pos = {x = 1, y = 0}, name = "Tapes of The Unholy"},
+    congregation = {pos = {x = 0, y = 1}, name = "A Congregation of Unholyness"},
+    jane = {pos = {x = 1, y = 1}, name = "Jane Keyboard Night"}
+}
+
+Oscillate.get_song_badge = function(album)
+    local selection = Oscillate.albums[album]
+    return {n=G.UIT.R, config={align = "cm"}, nodes={
+      {n=G.UIT.C, config={align = "cm", r = 10, colour = HEX("ffffff"), minw = 2, minh = 0.4, emboss = 0.05, padding = 0.1}, nodes={
+        {n=G.UIT.R, config={align = "cm"}, nodes = {
+            {n=G.UIT.T, config={text = "Album:", colour = G.C.UI.TEXT_DARK, scale = 0.4}},
+        }},
+        {n=G.UIT.R, config={align = "cm"}, nodes = {
+            {n=G.UIT.T, config={text = selection.name, colour = G.C.UI.TEXT_DARK, scale = 0.2}},
+        }},
+        {n=G.UIT.R, config={align = "cm"}, nodes = {
+            {n=G.UIT.O, config={object = SMODS.create_sprite(0, 0, 2, 2, "osc_w4covers", selection.pos)}},
+        }},
+      }}
+    }}
+end
 
 SMODS.draw_ignore_keys.oscillate_layer = true
 SMODS.DrawStep {
@@ -159,4 +220,36 @@ function Card:set_sprites(_center, _front)
             self.children.oscillate_layer.states.click.can = false
         end
     end
+end
+
+Oscillate.CanAscend = function(card)
+    if Oscillate.Ascension[card.config.center.key] or Oscillate.Ascension[card.config.center.rarity] then
+        return true
+    end
+
+    return false
+end
+
+Oscillate.Ascend = function(card)
+    if Oscillate.Ascension[card.config.center.key] then
+        SMODS.destroy_cards(card)
+        SMODS.add_card({key = Oscillate.Ascension[card.config.center.key]})
+    end
+
+    if Oscillate.Ascension[card.config.center.rarity] then
+        SMODS.destroy_cards(card)
+        SMODS.add_card({key = Oscillate.Ascension[card.config.center.rarity]})
+    end
+end
+
+Oscillate.CountBees = function()
+    if G.hand and G.hand.cards then
+        local count = 0
+        for i,v in ipairs(G.hand.cards) do
+            if v:get_seal() == "osc_honey" then count = count + (G.GAME.osc_seal_buffs.honey and 2 or 1) end
+        end
+
+        return count
+    end
+    return 0
 end

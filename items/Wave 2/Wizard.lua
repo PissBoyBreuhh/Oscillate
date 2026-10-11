@@ -12,6 +12,20 @@ SMODS.Sound {
     }
 }
 
+local shader = function()
+    G.SPLASH_BACK:define_draw_steps({{
+        shader = 'osc_wizard_bg',
+        send = {
+            {name = 'time', ref_table = G.TIMERS, ref_value = 'REAL_SHADER'},
+            {name = 'spin_time', ref_table = G.TIMERS, ref_value = 'BACKGROUND'},
+            {name = 'colour_1', ref_table = G.C.BACKGROUND, ref_value = 'C'},
+            {name = 'colour_2', ref_table = G.C.BACKGROUND, ref_value = 'L'},
+            {name = 'colour_3', ref_table = G.C.BACKGROUND, ref_value = 'D'},
+            {name = 'contrast', ref_table = G.C.BACKGROUND, ref_value = 'contrast'},
+            {name = 'spin_amount', ref_table = G.ARGS.spin, ref_value = 'amount'}
+        }}})
+end
+
 Oscillate.Joker {
     oscillate_wave = 2,
     key = "orb_great",
@@ -52,6 +66,7 @@ Oscillate.Joker {
         if context.selling_self then
             if card.ability.extra.blind >= card.ability.immutable.requirement then
                 SMODS.add_card({key = "j_osc_great_wizard"})
+                shader()
                 play_sound("osc_wizard")
             end
         end
@@ -60,6 +75,9 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 2,
+    oscillate_info = {
+        credit = "anton"
+    },
     key = "great_wizard",
     rarity = "osc_wizard",
     atlas = "osc_w2wizard",
@@ -123,6 +141,7 @@ Oscillate.Joker {
         if context.selling_self then
             if G.GAME.dollars >= card.ability.immutable.requirement then
                 SMODS.add_card({key = "j_osc_nunchucks_wizard"})
+                shader()
                 play_sound("osc_wizard")
             end
         end
@@ -131,6 +150,9 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 2,
+    oscillate_info = {
+        credit = "anton"
+    },
     key = "nunchucks_wizard",
     rarity = "osc_wizard",
     atlas = "osc_w2wizard",
@@ -184,6 +206,7 @@ Oscillate.Joker {
         if context.selling_self then
             if card.ability.extra.chips >= card.ability.immutable.requirement then
                 SMODS.add_card({key = "j_osc_gun_wizard"})
+                shader()
                 play_sound("osc_wizard")
             end
         end
@@ -192,6 +215,9 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 2,
+    oscillate_info = {
+        credit = "anton"
+    },
     key = "gun_wizard",
     rarity = "osc_wizard",
     atlas = "osc_w2wizard",
@@ -275,6 +301,7 @@ Oscillate.Joker {
         if context.selling_self then
             if card.ability.extra.p >= card.ability.immutable.requirement then
                 SMODS.add_card({key = "j_osc_p_wizard"})
+                shader()
                 play_sound("osc_wizard")
             end
         end
@@ -283,6 +310,9 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 2,
+    oscillate_info = {
+        credit = "anton"
+    },
     key = "p_wizard",
     rarity = "osc_wizard",
     atlas = "osc_w2wizard",

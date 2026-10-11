@@ -146,6 +146,10 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 1,
+    is_bee = true,
+    oscillate_info = {
+        credit = "Shiba"
+    },
     key = "bees",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -164,13 +168,17 @@ Oscillate.Joker {
 
     calculate = function(self,card,context)
         if context.pre_discard then
-            return{dollars=card.ability.extra.money}
+            return{dollars=card.ability.extra.money + Oscillate.CountBees()}
         end
     end,
 }
 
 Oscillate.Joker {
     oscillate_wave = 1,
+    is_bee = true,
+    oscillate_info = {
+        credit = "Shiba"
+    },
     key = "more_bees",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -189,13 +197,17 @@ Oscillate.Joker {
 
     calculate = function(self,card,context)
         if context.pre_discard or context.before then
-            return{dollars=card.ability.extra.money}
+            return{dollars=card.ability.extra.money + Oscillate.CountBees()}
         end
     end,
 }
 
 Oscillate.Joker {
     oscillate_wave = 1,
+    is_bee = true,
+    oscillate_info = {
+        credit = "Shiba"
+    },
     key = "even_more_bees",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -214,13 +226,16 @@ Oscillate.Joker {
 
     calculate = function(self,card,context)
         if context.pre_discard or context.before or context.setting_blind then
-            return{dollars=card.ability.extra.money}
+            return{dollars=card.ability.extra.money + Oscillate.CountBees()}
         end
     end,
 }
 
 Oscillate.Joker {
     oscillate_wave = 1,
+    oscillate_info = {
+        credit = "Shiba"
+    },
     key = "heat_death",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -300,6 +315,9 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 1,
+    oscillate_info = {
+        credit = "Shiba"
+    },
     key = "azazel_plush",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -313,7 +331,7 @@ Oscillate.Joker {
     cost = 5,
 
     loc_vars = function(self,info_queue,card)
-        info_queue[#info_queue+1] = G.P_CENTERS.osc_incubus_seal
+        info_queue[#info_queue+1] = G.P_SEALS.osc_incubus
         return {vars = {card.ability.extra.mult}}
     end,
 
@@ -328,6 +346,9 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 1,
+    oscillate_info = {
+        credit = "Shiba"
+    },
     key = "aussie_lamb",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -360,6 +381,9 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 1,
+    oscillate_info = {
+        credit = "Shiba"
+    },
     key = "canadian_rhino",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -392,6 +416,9 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 1,
+    oscillate_info = {
+        credit = "Shiba"
+    },
     key = "korean_salmon",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -424,6 +451,9 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 1,
+    oscillate_info = {
+        credit = "Shiba"
+    },
     key = "british_cow",
     rarity = 2,
     atlas = "osc_w1uncommon",
@@ -512,6 +542,9 @@ Oscillate.Joker {
 
 Oscillate.Joker {
     oscillate_wave = 1,
+    oscillate_info = {
+        credit = "Shiba"
+    },
     key = "oblobbles",
     rarity = 2,
     atlas = "osc_w1common", -- got buffed from common, thats why its atlas is w1common
